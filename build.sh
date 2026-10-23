@@ -1,18 +1,14 @@
 #!/usr/bin/env bash
 
-# Variable
 BUILD_DIR="build"          # CMake build directory
-BIN_DIR="bin"              # Where the executable is placed (see CMakeLists.txt)
-EXECUTABLE="main"          # Executable name (same as project name in CMakeLists.txt)
+BIN_DIR="bin"              # Where the executable is placed (refer in CMakeLists.txt)
+EXECUTABLE="main"          # Executable name (refer in CMakeLists.txt)
 BUILD_TYPE="Debug"         # Default build type: Debug or Release
 JOBS=""                    # Parallel jobs. Empty = plain -j, or set e.g. "8"
-
-# Action switches (set by flags, don't edit)
 DO_CLEAN=0
 DO_BUILD=0
 DO_RUN=0
 
-# Usage
 usage() {
     echo "Usage: ./build.sh [flags]"
     echo ""
@@ -33,7 +29,7 @@ usage() {
     echo "  ./build.sh -r -x           # release build and run"
 }
 
-# Parse flags
+# parse flags
 for arg in "$@"; do
     case "$arg" in
         -d|--debug)   BUILD_TYPE="Debug" ;;
@@ -58,7 +54,7 @@ fi
 cd "$(dirname "$0")" || exit 1
 set -e
 
-# Actions
+# actions
 if [ $DO_CLEAN -eq 1 ]; then
     echo "==> Cleaning"
     rm -rf "$BUILD_DIR"

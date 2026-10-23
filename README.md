@@ -2,24 +2,18 @@
 
 A vulkan renderer written in C++17.
 
-## 1. Install dependencies (Arch Linux)
+## 1. Install dependencies
 
 ```bash
+# arch linux
 sudo pacman -S --needed base-devel git cmake ninja vulkan-devel sdl3
-```
-
-Check that Vulkan works:
-
-```bash
-sudo pacman -S vulkan-tools
-vulkaninfo --summary
 ```
 
 ## 2. Clone the repo
 
 ```bash
-git clone <your-repo-url>
-cd <your-repo-folder>
+git clone https://github.com/Parven05/Azalea.git
+cd Azalea
 ```
 
 ## 3. Build and run
